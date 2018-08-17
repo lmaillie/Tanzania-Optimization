@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY saga-version="2.3.2">
+    <MODULE library="shapes_points" id="19" name="Snap Points to Lines">
+      <OPTION type="double" id="DISTANCE" name="Search Distance">0.000000</OPTION>
+      <INPUT type="shapes" id="INPUT" name="Points">
+        <FILE>C:/Temp/Luke/2018-07-02_ReUTM/health_facilities_aUREmdl_UTM.shp</FILE>
+      </INPUT>
+      <INPUT type="shapes" id="SNAP" name="Snap Features">
+        <FILE>C:/Temp/Luke/UTM_Points/roads_utm.shp</FILE>
+      </INPUT>
+      <OUTPUT type="shapes" id="MOVES" name="Moves">health_facilities_aUREmdl_UTM [snap move: roads_utm]</OUTPUT>
+    </MODULE>
+  </HISTORY>
+  <SOURCE>
+    <FILE></FILE>
+    <DATABASE>
+      <FIELDS>
+        <FIELD TYPE="DOUBLE">fid_1</FIELD>
+        <FIELD TYPE="STRING">FACILITY_I</FIELD>
+        <FIELD TYPE="STRING">FACILITY_N</FIELD>
+        <FIELD TYPE="DOUBLE">LATITUDE</FIELD>
+        <FIELD TYPE="DOUBLE">LONGITUDE</FIELD>
+        <FIELD TYPE="STRING">ZONE</FIELD>
+        <FIELD TYPE="STRING">REGION</FIELD>
+        <FIELD TYPE="STRING">COUNCIL</FIELD>
+        <FIELD TYPE="STRING">COMMON_FAC</FIELD>
+        <FIELD TYPE="LONGINT">ALTITUDE</FIELD>
+        <FIELD TYPE="STRING">FACILITY_T</FIELD>
+        <FIELD TYPE="STRING">OWNERSHIP</FIELD>
+        <FIELD TYPE="STRING">OPERATING_</FIELD>
+        <FIELD TYPE="LONGINT">safe_ag</FIELD>
+      </FIELDS>
+    </DATABASE>
+    <PROJECTION>
+      <OGC_WKT>PROJCS["WGS_1984_UTM_Zone_37S",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",10000000.0],PARAMETER["Central_Meridian",39.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0]]</OGC_WKT>
+      <PROJ4>+proj=tmerc +a=6378137.000000 +b=6356752.314245 +x_0=500000.0 +y_0=10000000.0 +lon_0=39.0 +k_0=0.9996 +lat_0=0.0 +no_defs</PROJ4>
+      <EPSG>-1</EPSG>
+    </PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>
