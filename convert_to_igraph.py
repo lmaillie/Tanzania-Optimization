@@ -22,7 +22,7 @@ Hexport1 = "./Temp/H_part1.nx"
 Hexport2 = "./Temp/H_part2.nx"
 Hexport3 = "./Temp/H_part3.nx"
 roadsExport = "./Temp/LIST_ROAD_SEG.p"
-
+matrix_file = "./Temp/path_matrix.p"
 
 # Start with using nx.read_shp to generate G
 # Set simplify = False so that you get every road node, not just road segment ends
@@ -461,10 +461,17 @@ import time
 #end = time.time()
 #print(end - start)
 
-start= time.time()
-path_matrix = F_temp.shortest_paths_dijkstra(source=health_facilities,target=ward_centers, mode = all)
-end = time.time()
-print(end - start)
+if os.path.isfile(matrix_file):
+    with open (matrix_file, 'rb') as fp:
+        path_matrix = pickle.load(fp)
+else:
+    start= time.time()
+    path_matrix = F_temp.shortest_paths_dijkstra(source=health_facilities,target=ward_centers,weights='distance', mode = "all")
+    end = time.time()
+    print(end - start)
+    with open(matrix_file, 'wb') as fp:
+        pickle.dump(path_matrix, fp)
+    
 
 
 
